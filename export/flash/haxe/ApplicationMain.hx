@@ -50,7 +50,15 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.BINARY);
 		
 		
+		urls.push ("assets/music/level.ceol");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
 		urls.push ("assets/music/music-goes-here.txt");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("assets/music/somelevel.ceol");
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		

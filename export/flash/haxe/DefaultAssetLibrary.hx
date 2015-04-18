@@ -53,8 +53,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/titleBackgroud.png", AssetType.IMAGE);
 		className.set ("assets/images/titleBackgroud.pyxel", __ASSET__assets_images_titlebackgroud_pyxel);
 		type.set ("assets/images/titleBackgroud.pyxel", AssetType.BINARY);
+		className.set ("assets/music/level.ceol", __ASSET__assets_music_level_ceol);
+		type.set ("assets/music/level.ceol", AssetType.TEXT);
 		className.set ("assets/music/music-goes-here.txt", __ASSET__assets_music_music_goes_here_txt);
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
+		className.set ("assets/music/somelevel.ceol", __ASSET__assets_music_somelevel_ceol);
+		type.set ("assets/music/somelevel.ceol", AssetType.TEXT);
 		className.set ("assets/sounds/sounds-go-here.txt", __ASSET__assets_sounds_sounds_go_here_txt);
 		type.set ("assets/sounds/sounds-go-here.txt", AssetType.TEXT);
 		className.set ("assets/sounds/beep.mp3", __ASSET__assets_sounds_beep_mp3);
@@ -82,7 +86,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.BINARY);
+		id = "assets/music/level.ceol";
+		path.set (id, id);
+		
+		type.set (id, AssetType.TEXT);
 		id = "assets/music/music-goes-here.txt";
+		path.set (id, id);
+		
+		type.set (id, AssetType.TEXT);
+		id = "assets/music/somelevel.ceol";
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
@@ -120,6 +132,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
 		#end
 		
 		#if (windows || mac || linux)
@@ -138,8 +152,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("assets/images/titleBackgroud.pyxel", __ASSET__assets_images_titlebackgroud_pyxel);
 		type.set ("assets/images/titleBackgroud.pyxel", AssetType.BINARY);
 		
+		className.set ("assets/music/level.ceol", __ASSET__assets_music_level_ceol);
+		type.set ("assets/music/level.ceol", AssetType.TEXT);
+		
 		className.set ("assets/music/music-goes-here.txt", __ASSET__assets_music_music_goes_here_txt);
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
+		
+		className.set ("assets/music/somelevel.ceol", __ASSET__assets_music_somelevel_ceol);
+		type.set ("assets/music/somelevel.ceol", AssetType.TEXT);
 		
 		className.set ("assets/sounds/sounds-go-here.txt", __ASSET__assets_sounds_sounds_go_here_txt);
 		type.set ("assets/sounds/sounds-go-here.txt", AssetType.TEXT);
@@ -754,13 +774,17 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep @:bind #if display private #end class __ASSET__assets_images_images_go_here_txt extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_images_titlebackgroud_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_titlebackgroud_pyxel extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_music_level_ceol extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_music_music_goes_here_txt extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_music_somelevel_ceol extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_sounds_go_here_txt extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_beep_mp3 extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_flixel_mp3 extends flash.media.Sound { }
 
 
 #elseif html5
+
+
 
 
 
@@ -783,10 +807,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:file("assets/images/images-go-here.txt") #if display private #end class __ASSET__assets_images_images_go_here_txt extends lime.utils.ByteArray {}
 @:image("assets/images/titleBackgroud.png") #if display private #end class __ASSET__assets_images_titlebackgroud_png extends lime.graphics.Image {}
 @:file("assets/images/titleBackgroud.pyxel") #if display private #end class __ASSET__assets_images_titlebackgroud_pyxel extends lime.utils.ByteArray {}
+@:file("assets/music/level.ceol") #if display private #end class __ASSET__assets_music_level_ceol extends lime.utils.ByteArray {}
 @:file("assets/music/music-goes-here.txt") #if display private #end class __ASSET__assets_music_music_goes_here_txt extends lime.utils.ByteArray {}
+@:file("assets/music/somelevel.ceol") #if display private #end class __ASSET__assets_music_somelevel_ceol extends lime.utils.ByteArray {}
 @:file("assets/sounds/sounds-go-here.txt") #if display private #end class __ASSET__assets_sounds_sounds_go_here_txt extends lime.utils.ByteArray {}
-@:file("D:/HaxeToolkit/haxe/lib/flixel/3,3,8/assets/sounds/beep.mp3") #if display private #end class __ASSET__assets_sounds_beep_mp3 extends lime.utils.ByteArray {}
-@:file("D:/HaxeToolkit/haxe/lib/flixel/3,3,8/assets/sounds/flixel.mp3") #if display private #end class __ASSET__assets_sounds_flixel_mp3 extends lime.utils.ByteArray {}
+@:file("D:/Users/James/GitHub/flixel/3,3,8/assets/sounds/beep.mp3") #if display private #end class __ASSET__assets_sounds_beep_mp3 extends lime.utils.ByteArray {}
+@:file("D:/Users/James/GitHub/flixel/3,3,8/assets/sounds/flixel.mp3") #if display private #end class __ASSET__assets_sounds_flixel_mp3 extends lime.utils.ByteArray {}
 
 
 

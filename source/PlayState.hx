@@ -28,7 +28,7 @@ class PlayState extends FlxState
 		_floor.makeGraphic(300, 15, 0xff689c16);
 		add(_floor);
 		
-		_player = new Player(20, 20);
+		_player = new Player(125, 20);
 		add(_player);
 		
 		super.create();
