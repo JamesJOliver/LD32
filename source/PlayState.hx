@@ -8,6 +8,7 @@ import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.util.FlxAngle;
 import flixel.util.FlxMath;
+import flixel.tile.FlxTileblock;
 
 /**
  * @author James Oliver - jamesjo.co.uk
@@ -16,12 +17,17 @@ import flixel.util.FlxMath;
 class PlayState extends FlxState
 {
 	private var _player:Player;
-	
+	private var _floor:FlxTileblock;
+	private var _platform:FlxTileblock;
 	/**
 	 * Function that is called up when to state is created to set it up. 
 	 */
 	override public function create():Void
 	{
+		_floor = new FlxTileblock(125, 125, 300, 15);
+		_floor.makeGraphic(300, 15, 0xff689c16);
+		add(_floor);
+		
 		_player = new Player(20, 20);
 		add(_player);
 		
@@ -33,7 +39,7 @@ class PlayState extends FlxState
 	 */
 	override public function update():Void
 	{
-		movement();
+		FlxG.collide(_player, _floor);
 		
 		super.update();
 	}	
@@ -45,11 +51,6 @@ class PlayState extends FlxState
 	override public function destroy():Void
 	{
 		super.destroy();
-	}
-	
-	private function movement():Void
-	{
-		
 	}
 
 }
