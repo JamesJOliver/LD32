@@ -17,12 +17,16 @@ using flixel.util.FlxSpriteUtil;
 class MenuState extends FlxState
 {
 	private var _playIntroButton:FlxButton;
+	private var _menuBG:FlxSprite;
 	
 	/**
 	 * Function that is called up when to state is created to set it up. 
 	 */
 	override public function create():Void
 	{
+		_menuBG = new FlxSprite(0, 0, "assets/images/titleBackgroud.png");
+		add(_menuBG);
+		
 		_playIntroButton = new FlxButton(0, 0, "Play!", playIntro);
 		_playIntroButton.screenCenter();
 		add(_playIntroButton);

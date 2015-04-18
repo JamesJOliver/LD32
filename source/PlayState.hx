@@ -1,10 +1,12 @@
 package;
 
 import flixel.FlxG;
+import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
+import flixel.util.FlxAngle;
 import flixel.util.FlxMath;
 
 /**
@@ -13,11 +15,16 @@ import flixel.util.FlxMath;
  */
 class PlayState extends FlxState
 {
+	private var _player:Player;
+	
 	/**
 	 * Function that is called up when to state is created to set it up. 
 	 */
 	override public function create():Void
 	{
+		_player = new Player(20, 20);
+		add(_player);
+		
 		super.create();
 	}
 	
@@ -26,6 +33,8 @@ class PlayState extends FlxState
 	 */
 	override public function update():Void
 	{
+		movement();
+		
 		super.update();
 	}	
 	
@@ -36,6 +45,11 @@ class PlayState extends FlxState
 	override public function destroy():Void
 	{
 		super.destroy();
+	}
+	
+	private function movement():Void
+	{
+		
 	}
 
 }

@@ -19,3 +19,5 @@ Platformer where aliens are killed by the ammonia in the urine(censoring)
 
 #Story
 In the year 2057 the impossible happened. The Earth was invaded. These invaders were like nothing seen before and completely immune to conventional firearms and even the entire world's nuclear arsenal. Now occupied, Earth is a mining planet run by the invaders using its old inhibitors as a slave workforce.
+
+Viva la revolucion!
