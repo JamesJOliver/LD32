@@ -8,6 +8,7 @@ import flixel.ui.FlxButton;
 import flixel.util.FlxMath;
 
 /**
+ * @author James Oliver - jamesjo.co.uk
  * A FlxState which can be used for the actual gameplay.
  */
 class PlayState extends FlxState
@@ -21,6 +22,14 @@ class PlayState extends FlxState
 	}
 	
 	/**
+	 * Function that is called once every frame.
+	 */
+	override public function update():Void
+	{
+		super.update();
+	}	
+	
+	/**
 	 * Function that is called when this state is destroyed - you might want to 
 	 * consider setting all objects this state uses to null to help garbage collection.
 	 */
@@ -29,11 +38,4 @@ class PlayState extends FlxState
 		super.destroy();
 	}
 
-	/**
-	 * Function that is called once every frame.
-	 */
-	override public function update():Void
-	{
-		super.update();
-	}	
 }
