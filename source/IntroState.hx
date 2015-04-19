@@ -23,7 +23,7 @@ class IntroState extends FlxState
 	override public function create():Void
 	{
 		_introText = new FlxText(0, 10, 500, 14, true);
-		_introText.text = "In the year 2057 the impossible happened. The Earth was invaded. These invaders were like nothing seen before and completely immune to all we could throw at them - even the entire world's nuclear arsenal. Now occupied, Earth is a mining planet run by the invaders using its old inhibitors as a slave workforce.";
+		_introText.text = "In the year 2057 the impossible happened. The Earth was invaded. These invaders were like nothing seen before and completely immune to all we could throw at them - even the entire world's nuclear arsenal. Now occupied, Earth is a mining planet run by the invaders using its old inhabitants as a slave workforce.";
 		_introText.screenCenter(true, false);
 		add(_introText);
 		

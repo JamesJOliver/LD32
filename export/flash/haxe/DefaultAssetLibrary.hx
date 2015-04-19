@@ -47,12 +47,24 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/data/data-goes-here.txt", __ASSET__assets_data_data_goes_here_txt);
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
+		className.set ("assets/data/tilemap", __ASSET__assets_data_tilemap);
+		type.set ("assets/data/tilemap", AssetType.BINARY);
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
+		className.set ("assets/images/tiles.png", __ASSET__assets_images_tiles_png);
+		type.set ("assets/images/tiles.png", AssetType.IMAGE);
+		className.set ("assets/images/tiles.pyxel", __ASSET__assets_images_tiles_pyxel);
+		type.set ("assets/images/tiles.pyxel", AssetType.BINARY);
 		className.set ("assets/images/titleBackgroud.png", __ASSET__assets_images_titlebackgroud_png);
 		type.set ("assets/images/titleBackgroud.png", AssetType.IMAGE);
 		className.set ("assets/images/titleBackgroud.pyxel", __ASSET__assets_images_titlebackgroud_pyxel);
 		type.set ("assets/images/titleBackgroud.pyxel", AssetType.BINARY);
+		className.set ("assets/levels/LD32.oep", __ASSET__assets_levels_ld32_oep);
+		type.set ("assets/levels/LD32.oep", AssetType.TEXT);
+		className.set ("assets/levels/level01.oel", __ASSET__assets_levels_level01_oel);
+		type.set ("assets/levels/level01.oel", AssetType.TEXT);
+		className.set ("assets/levels/level1.oel", __ASSET__assets_levels_level1_oel);
+		type.set ("assets/levels/level1.oel", AssetType.TEXT);
 		className.set ("assets/music/level.ceol", __ASSET__assets_music_level_ceol);
 		type.set ("assets/music/level.ceol", AssetType.TEXT);
 		className.set ("assets/music/music-goes-here.txt", __ASSET__assets_music_music_goes_here_txt);
@@ -74,10 +86,22 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
+		id = "assets/data/tilemap";
+		path.set (id, id);
+		
+		type.set (id, AssetType.BINARY);
 		id = "assets/images/images-go-here.txt";
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
+		id = "assets/images/tiles.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/tiles.pyxel";
+		path.set (id, id);
+		
+		type.set (id, AssetType.BINARY);
 		id = "assets/images/titleBackgroud.png";
 		path.set (id, id);
 		
@@ -86,6 +110,18 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.BINARY);
+		id = "assets/levels/LD32.oep";
+		path.set (id, id);
+		
+		type.set (id, AssetType.TEXT);
+		id = "assets/levels/level01.oel";
+		path.set (id, id);
+		
+		type.set (id, AssetType.TEXT);
+		id = "assets/levels/level1.oel";
+		path.set (id, id);
+		
+		type.set (id, AssetType.TEXT);
 		id = "assets/music/level.ceol";
 		path.set (id, id);
 		
@@ -134,6 +170,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
 		#end
 		
 		#if (windows || mac || linux)
@@ -143,14 +185,32 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("assets/data/data-goes-here.txt", __ASSET__assets_data_data_goes_here_txt);
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
 		
+		className.set ("assets/data/tilemap", __ASSET__assets_data_tilemap);
+		type.set ("assets/data/tilemap", AssetType.BINARY);
+		
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
+		
+		className.set ("assets/images/tiles.png", __ASSET__assets_images_tiles_png);
+		type.set ("assets/images/tiles.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/tiles.pyxel", __ASSET__assets_images_tiles_pyxel);
+		type.set ("assets/images/tiles.pyxel", AssetType.BINARY);
 		
 		className.set ("assets/images/titleBackgroud.png", __ASSET__assets_images_titlebackgroud_png);
 		type.set ("assets/images/titleBackgroud.png", AssetType.IMAGE);
 		
 		className.set ("assets/images/titleBackgroud.pyxel", __ASSET__assets_images_titlebackgroud_pyxel);
 		type.set ("assets/images/titleBackgroud.pyxel", AssetType.BINARY);
+		
+		className.set ("assets/levels/LD32.oep", __ASSET__assets_levels_ld32_oep);
+		type.set ("assets/levels/LD32.oep", AssetType.TEXT);
+		
+		className.set ("assets/levels/level01.oel", __ASSET__assets_levels_level01_oel);
+		type.set ("assets/levels/level01.oel", AssetType.TEXT);
+		
+		className.set ("assets/levels/level1.oel", __ASSET__assets_levels_level1_oel);
+		type.set ("assets/levels/level1.oel", AssetType.TEXT);
 		
 		className.set ("assets/music/level.ceol", __ASSET__assets_music_level_ceol);
 		type.set ("assets/music/level.ceol", AssetType.TEXT);
@@ -771,9 +831,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if flash
 
 @:keep @:bind #if display private #end class __ASSET__assets_data_data_goes_here_txt extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_data_tilemap extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_images_images_go_here_txt extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_images_tiles_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_tiles_pyxel extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_images_titlebackgroud_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_titlebackgroud_pyxel extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_levels_ld32_oep extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_levels_level01_oel extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_levels_level1_oel extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_music_level_ceol extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_music_music_goes_here_txt extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_music_somelevel_ceol extends flash.utils.ByteArray { }
@@ -796,6 +862,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
 #else
 
 
@@ -804,9 +876,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 @:file("assets/data/data-goes-here.txt") #if display private #end class __ASSET__assets_data_data_goes_here_txt extends lime.utils.ByteArray {}
+@:file("assets/data/tilemap") #if display private #end class __ASSET__assets_data_tilemap extends lime.utils.ByteArray {}
 @:file("assets/images/images-go-here.txt") #if display private #end class __ASSET__assets_images_images_go_here_txt extends lime.utils.ByteArray {}
+@:image("assets/images/tiles.png") #if display private #end class __ASSET__assets_images_tiles_png extends lime.graphics.Image {}
+@:file("assets/images/tiles.pyxel") #if display private #end class __ASSET__assets_images_tiles_pyxel extends lime.utils.ByteArray {}
 @:image("assets/images/titleBackgroud.png") #if display private #end class __ASSET__assets_images_titlebackgroud_png extends lime.graphics.Image {}
 @:file("assets/images/titleBackgroud.pyxel") #if display private #end class __ASSET__assets_images_titlebackgroud_pyxel extends lime.utils.ByteArray {}
+@:file("assets/levels/LD32.oep") #if display private #end class __ASSET__assets_levels_ld32_oep extends lime.utils.ByteArray {}
+@:file("assets/levels/level01.oel") #if display private #end class __ASSET__assets_levels_level01_oel extends lime.utils.ByteArray {}
+@:file("assets/levels/level1.oel") #if display private #end class __ASSET__assets_levels_level1_oel extends lime.utils.ByteArray {}
 @:file("assets/music/level.ceol") #if display private #end class __ASSET__assets_music_level_ceol extends lime.utils.ByteArray {}
 @:file("assets/music/music-goes-here.txt") #if display private #end class __ASSET__assets_music_music_goes_here_txt extends lime.utils.ByteArray {}
 @:file("assets/music/somelevel.ceol") #if display private #end class __ASSET__assets_music_somelevel_ceol extends lime.utils.ByteArray {}

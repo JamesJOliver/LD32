@@ -38,8 +38,20 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
+		urls.push ("assets/data/tilemap");
+		types.push (lime.Assets.AssetType.BINARY);
+		
+		
 		urls.push ("assets/images/images-go-here.txt");
 		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("assets/images/tiles.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/tiles.pyxel");
+		types.push (lime.Assets.AssetType.BINARY);
 		
 		
 		urls.push ("assets/images/titleBackgroud.png");
@@ -48,6 +60,18 @@ class ApplicationMain {
 		
 		urls.push ("assets/images/titleBackgroud.pyxel");
 		types.push (lime.Assets.AssetType.BINARY);
+		
+		
+		urls.push ("assets/levels/LD32.oep");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("assets/levels/level01.oel");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("assets/levels/level1.oel");
+		types.push (lime.Assets.AssetType.TEXT);
 		
 		
 		urls.push ("assets/music/level.ceol");

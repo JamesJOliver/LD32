@@ -3,6 +3,7 @@ package ;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
+import flixel.group.FlxGroup;
 import flixel.system.FlxSound;
 import flixel.ui.FlxButton;
 import flixel.util.FlxAngle;
@@ -22,8 +23,11 @@ class Player extends FlxSprite
 	public static inline var JUMP_SPEED:Int = 250;
 	public static inline var JUMPS_ALLOWED:Int = 2;
 	public static inline var BULLET_SPEED:Int = 200;
-	public static inline var GUN_DELAY:Float = 0.4;
+	public static inline var SHOOT_DELAY:Float = 0.4;
 	
+	private var _bullets:FlxGroup;
+	private var _bullet:Bullet;
+	private var _cooldown:Float;
 	private var _maxHeath:Int;
 	private var _jumpTime:Float = -1;
 	private var _timesJumped:Int = 0;
@@ -36,10 +40,20 @@ class Player extends FlxSprite
 		super(X, Y);
 		
 		makeGraphic(32, 32, FlxColor.RED);
+		setSize(28, 28);
+		offset.set(4, 4);
 		
 		drag.set(RUN_SPEED * 8, RUN_SPEED * 8);
 		maxVelocity.set(RUN_SPEED, JUMP_SPEED);
 		acceleration.y = GRAVITY;
+		
+	}
+	
+	override public function update():Void
+	{
+		jump();
+		movement();
+		super.update();
 	}
 	
 	public function jump():Void
@@ -68,7 +82,7 @@ class Player extends FlxSprite
 			}
 			else if (_jumpTime > 0)
 			{
-				velocity.y = - 0.6 * maxVelocity.y;
+				velocity.y = - 0.73 * maxVelocity.y;
 			}
 		}
 		
@@ -90,11 +104,11 @@ class Player extends FlxSprite
 		}		
 	}
 	
-	override public function update():Void
+	public function shoot():Void
 	{
-		jump();
-		movement();
-		super.update();
+		
 	}
+	
+
 	
 }
