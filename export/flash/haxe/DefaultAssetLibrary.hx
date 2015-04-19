@@ -55,6 +55,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/tiles.png", AssetType.IMAGE);
 		className.set ("assets/images/tiles.pyxel", __ASSET__assets_images_tiles_pyxel);
 		type.set ("assets/images/tiles.pyxel", AssetType.BINARY);
+		className.set ("assets/images/tilesMKI.pyxel", __ASSET__assets_images_tilesmki_pyxel);
+		type.set ("assets/images/tilesMKI.pyxel", AssetType.BINARY);
 		className.set ("assets/images/titleBackgroud.png", __ASSET__assets_images_titlebackgroud_png);
 		type.set ("assets/images/titleBackgroud.png", AssetType.IMAGE);
 		className.set ("assets/images/titleBackgroud.pyxel", __ASSET__assets_images_titlebackgroud_pyxel);
@@ -99,6 +101,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/tiles.pyxel";
+		path.set (id, id);
+		
+		type.set (id, AssetType.BINARY);
+		id = "assets/images/tilesMKI.pyxel";
 		path.set (id, id);
 		
 		type.set (id, AssetType.BINARY);
@@ -176,6 +182,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		#end
 		
 		#if (windows || mac || linux)
@@ -196,6 +203,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/images/tiles.pyxel", __ASSET__assets_images_tiles_pyxel);
 		type.set ("assets/images/tiles.pyxel", AssetType.BINARY);
+		
+		className.set ("assets/images/tilesMKI.pyxel", __ASSET__assets_images_tilesmki_pyxel);
+		type.set ("assets/images/tilesMKI.pyxel", AssetType.BINARY);
 		
 		className.set ("assets/images/titleBackgroud.png", __ASSET__assets_images_titlebackgroud_png);
 		type.set ("assets/images/titleBackgroud.png", AssetType.IMAGE);
@@ -835,6 +845,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep @:bind #if display private #end class __ASSET__assets_images_images_go_here_txt extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_images_tiles_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_tiles_pyxel extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_images_tilesmki_pyxel extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_images_titlebackgroud_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_titlebackgroud_pyxel extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_levels_ld32_oep extends flash.utils.ByteArray { }
@@ -868,6 +879,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 #else
 
 
@@ -880,6 +892,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:file("assets/images/images-go-here.txt") #if display private #end class __ASSET__assets_images_images_go_here_txt extends lime.utils.ByteArray {}
 @:image("assets/images/tiles.png") #if display private #end class __ASSET__assets_images_tiles_png extends lime.graphics.Image {}
 @:file("assets/images/tiles.pyxel") #if display private #end class __ASSET__assets_images_tiles_pyxel extends lime.utils.ByteArray {}
+@:file("assets/images/tilesMKI.pyxel") #if display private #end class __ASSET__assets_images_tilesmki_pyxel extends lime.utils.ByteArray {}
 @:image("assets/images/titleBackgroud.png") #if display private #end class __ASSET__assets_images_titlebackgroud_png extends lime.graphics.Image {}
 @:file("assets/images/titleBackgroud.pyxel") #if display private #end class __ASSET__assets_images_titlebackgroud_pyxel extends lime.utils.ByteArray {}
 @:file("assets/levels/LD32.oep") #if display private #end class __ASSET__assets_levels_ld32_oep extends lime.utils.ByteArray {}

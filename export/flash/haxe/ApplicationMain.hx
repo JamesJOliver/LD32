@@ -54,6 +54,10 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.BINARY);
 		
 		
+		urls.push ("assets/images/tilesMKI.pyxel");
+		types.push (lime.Assets.AssetType.BINARY);
+		
+		
 		urls.push ("assets/images/titleBackgroud.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
