@@ -41,6 +41,7 @@ class HXCPP_CLASS_ATTRIBUTES  MenuState_obj : public ::flixel::FlxState_obj{
 		::String __ToString() const { return HX_CSTRING("MenuState"); }
 
 		::flixel::ui::FlxButton _playIntroButton;
+		::flixel::FlxSprite _menuBG;
 		virtual Void create( );
 
 		virtual Void update( );

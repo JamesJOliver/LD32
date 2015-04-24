@@ -95,17 +95,23 @@ Dynamic MenuState_obj::__Create(hx::DynamicArray inArgs)
 
 Void MenuState_obj::create( ){
 {
-		HX_STACK_FRAME("MenuState","create",0xe57b7c18,"MenuState.create","MenuState.hx",25,0xdfbcb22c)
+		HX_STACK_FRAME("MenuState","create",0xe57b7c18,"MenuState.create","MenuState.hx",26,0xdfbcb22c)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(26)
-		::flixel::ui::FlxButton _g = ::flixel::ui::FlxButton_obj::__new((int)0,(int)0,HX_CSTRING("Play!"),this->playIntro_dyn());		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(26)
-		this->_playIntroButton = _g;
 		HX_STACK_LINE(27)
-		::flixel::util::FlxSpriteUtil_obj::screenCenter(this->_playIntroButton,null(),null());
+		::flixel::FlxSprite _g = ::flixel::FlxSprite_obj::__new((int)0,(int)0,HX_CSTRING("assets/images/titleBackgroud.png"));		HX_STACK_VAR(_g,"_g");
+		HX_STACK_LINE(27)
+		this->_menuBG = _g;
 		HX_STACK_LINE(28)
-		this->add(this->_playIntroButton);
+		this->add(this->_menuBG);
 		HX_STACK_LINE(30)
+		::flixel::ui::FlxButton _g1 = ::flixel::ui::FlxButton_obj::__new((int)0,(int)0,HX_CSTRING("Play!"),this->playIntro_dyn());		HX_STACK_VAR(_g1,"_g1");
+		HX_STACK_LINE(30)
+		this->_playIntroButton = _g1;
+		HX_STACK_LINE(31)
+		::flixel::util::FlxSpriteUtil_obj::screenCenter(this->_playIntroButton,null(),null());
+		HX_STACK_LINE(32)
+		this->add(this->_playIntroButton);
+		HX_STACK_LINE(34)
 		this->super::create();
 	}
 return null();
@@ -114,9 +120,9 @@ return null();
 
 Void MenuState_obj::update( ){
 {
-		HX_STACK_FRAME("MenuState","update",0xf0719b25,"MenuState.update","MenuState.hx",38,0xdfbcb22c)
+		HX_STACK_FRAME("MenuState","update",0xf0719b25,"MenuState.update","MenuState.hx",42,0xdfbcb22c)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(42)
 		this->super::update();
 	}
 return null();
@@ -125,13 +131,13 @@ return null();
 
 Void MenuState_obj::destroy( ){
 {
-		HX_STACK_FRAME("MenuState","destroy",0xf9ac905e,"MenuState.destroy","MenuState.hx",46,0xdfbcb22c)
+		HX_STACK_FRAME("MenuState","destroy",0xf9ac905e,"MenuState.destroy","MenuState.hx",50,0xdfbcb22c)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(47)
+		HX_STACK_LINE(51)
 		this->super::destroy();
-		HX_STACK_LINE(49)
+		HX_STACK_LINE(53)
 		::flixel::ui::FlxButton _g = ::flixel::util::FlxDestroyUtil_obj::destroy(this->_playIntroButton);		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(49)
+		HX_STACK_LINE(53)
 		this->_playIntroButton = _g;
 	}
 return null();
@@ -140,11 +146,11 @@ return null();
 
 Void MenuState_obj::playIntro( ){
 {
-		HX_STACK_FRAME("MenuState","playIntro",0x1515fc3c,"MenuState.playIntro","MenuState.hx",54,0xdfbcb22c)
+		HX_STACK_FRAME("MenuState","playIntro",0x1515fc3c,"MenuState.playIntro","MenuState.hx",58,0xdfbcb22c)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(54)
+		HX_STACK_LINE(58)
 		::flixel::FlxState State = ::IntroState_obj::__new(null());		HX_STACK_VAR(State,"State");
-		HX_STACK_LINE(54)
+		HX_STACK_LINE(58)
 		::flixel::FlxG_obj::game->_requestedState = State;
 	}
 return null();
@@ -162,6 +168,7 @@ void MenuState_obj::__Mark(HX_MARK_PARAMS)
 {
 	HX_MARK_BEGIN_CLASS(MenuState);
 	HX_MARK_MEMBER_NAME(_playIntroButton,"_playIntroButton");
+	HX_MARK_MEMBER_NAME(_menuBG,"_menuBG");
 	::flixel::FlxState_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
@@ -169,6 +176,7 @@ void MenuState_obj::__Mark(HX_MARK_PARAMS)
 void MenuState_obj::__Visit(HX_VISIT_PARAMS)
 {
 	HX_VISIT_MEMBER_NAME(_playIntroButton,"_playIntroButton");
+	HX_VISIT_MEMBER_NAME(_menuBG,"_menuBG");
 	::flixel::FlxState_obj::__Visit(HX_VISIT_ARG);
 }
 
@@ -180,6 +188,7 @@ Dynamic MenuState_obj::__Field(const ::String &inName,bool inCallProp)
 		if (HX_FIELD_EQ(inName,"update") ) { return update_dyn(); }
 		break;
 	case 7:
+		if (HX_FIELD_EQ(inName,"_menuBG") ) { return _menuBG; }
 		if (HX_FIELD_EQ(inName,"destroy") ) { return destroy_dyn(); }
 		break;
 	case 9:
@@ -194,6 +203,9 @@ Dynamic MenuState_obj::__Field(const ::String &inName,bool inCallProp)
 Dynamic MenuState_obj::__SetField(const ::String &inName,const Dynamic &inValue,bool inCallProp)
 {
 	switch(inName.length) {
+	case 7:
+		if (HX_FIELD_EQ(inName,"_menuBG") ) { _menuBG=inValue.Cast< ::flixel::FlxSprite >(); return inValue; }
+		break;
 	case 16:
 		if (HX_FIELD_EQ(inName,"_playIntroButton") ) { _playIntroButton=inValue.Cast< ::flixel::ui::FlxButton >(); return inValue; }
 	}
@@ -203,6 +215,7 @@ Dynamic MenuState_obj::__SetField(const ::String &inName,const Dynamic &inValue,
 void MenuState_obj::__GetFields(Array< ::String> &outFields)
 {
 	outFields->push(HX_CSTRING("_playIntroButton"));
+	outFields->push(HX_CSTRING("_menuBG"));
 	super::__GetFields(outFields);
 };
 
@@ -212,12 +225,14 @@ static ::String sStaticFields[] = {
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsObject /*::flixel::ui::FlxButton*/ ,(int)offsetof(MenuState_obj,_playIntroButton),HX_CSTRING("_playIntroButton")},
+	{hx::fsObject /*::flixel::FlxSprite*/ ,(int)offsetof(MenuState_obj,_menuBG),HX_CSTRING("_menuBG")},
 	{ hx::fsUnknown, 0, null()}
 };
 #endif
 
 static ::String sMemberFields[] = {
 	HX_CSTRING("_playIntroButton"),
+	HX_CSTRING("_menuBG"),
 	HX_CSTRING("create"),
 	HX_CSTRING("update"),
 	HX_CSTRING("destroy"),

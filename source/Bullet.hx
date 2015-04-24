@@ -1,6 +1,8 @@
 package ;
 
+import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.util.FlxPoint;
 
 /**
  * ...
@@ -11,7 +13,22 @@ class Bullet extends FlxSprite
 
 	public function new() 
 	{
-		super(x, y);
+		super();
+	}
+	
+	override public function update():Void
+	{
+		
+	}
+	
+	public function shoot():Void
+	{
+		
+	}
+	
+	public function angledShoot():Void
+	{
+		
 	}
 	
 }

@@ -69,7 +69,7 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(19)
 	this->startFullscreen = false;
 	HX_STACK_LINE(18)
-	this->skipSplash = true;
+	this->skipSplash = false;
 	HX_STACK_LINE(17)
 	this->framerate = (int)60;
 	HX_STACK_LINE(16)

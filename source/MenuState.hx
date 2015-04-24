@@ -29,6 +29,7 @@ class MenuState extends FlxState
 		
 		_playIntroButton = new FlxButton(0, 0, "Play!", playIntro);
 		_playIntroButton.screenCenter();
+		_playIntroButton.onUp.sound = FlxG.sound.load("assets/sounds/Select.wav");
 		add(_playIntroButton);
 		
 		super.create();

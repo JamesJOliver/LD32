@@ -29,6 +29,7 @@ class IntroState extends FlxState
 		
 		_playButton = new FlxButton(0, 0, "Begin!", playGame);
 		_playButton.screenCenter();
+		_playButton.onUp.sound = FlxG.sound.load("assets/sounds/Select.wav");
 		add(_playButton);
 		
 		super.create();
@@ -49,6 +50,7 @@ class IntroState extends FlxState
 	override public function destroy():Void
 	{
 		super.destroy();
+		
 		_introText = FlxDestroyUtil.destroy(_introText);
 		_playButton = FlxDestroyUtil.destroy(_playButton);
 	}

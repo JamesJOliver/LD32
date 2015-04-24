@@ -144,6 +144,13 @@
 #include <haxe/zip/Uncompress.h>
 #include <haxe/zip/FlushMode.h>
 #include <haxe/zip/Compress.h>
+#include <haxe/xml/Parser.h>
+#include <haxe/xml/Fast.h>
+#include <haxe/xml/_Fast/NodeListAccess.h>
+#include <haxe/xml/_Fast/HasNodeAccess.h>
+#include <haxe/xml/_Fast/HasAttribAccess.h>
+#include <haxe/xml/_Fast/AttribAccess.h>
+#include <haxe/xml/_Fast/NodeAccess.h>
 #include <haxe/io/Path.h>
 #include <haxe/io/Error.h>
 #include <haxe/io/Eof.h>
@@ -275,15 +282,12 @@
 #include <flixel/animation/FlxAnimationController.h>
 #include <flixel/animation/FlxAnimation.h>
 #include <flixel/animation/FlxBaseAnimation.h>
+#include <flixel/addons/editors/ogmo/FlxOgmoLoader.h>
 #include <flixel/FlxSubState.h>
-#include <flixel/FlxSprite.h>
 #include <flixel/_FlxSprite/GraphicDefault.h>
 #include <openfl/_legacy/display/BitmapData.h>
-#include <flixel/FlxObject.h>
 #include <flixel/FlxGame.h>
 #include <flixel/FlxG.h>
-#include <flixel/util/FlxRect.h>
-#include <flixel/util/FlxPool_flixel_util_FlxRect.h>
 #include <flixel/system/frontEnds/WatchFrontEnd.h>
 #include <flixel/system/frontEnds/VCRFrontEnd.h>
 #include <flixel/system/frontEnds/SoundFrontEnd.h>
@@ -311,7 +315,6 @@
 #include <flixel/system/scaleModes/BaseScaleMode.h>
 #include <flixel/util/FlxPoint.h>
 #include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
-#include <flixel/interfaces/IFlxPooled.h>
 #include <flixel/system/FlxVersion.h>
 #include <flixel/FlxCamera.h>
 #include <cpp/vm/Thread.h>
@@ -324,6 +327,8 @@
 #include <StringTools.h>
 #include <StringBuf.h>
 #include <Reflect.h>
+#include <Player.h>
+#include <PlayState.h>
 #include <MenuState.h>
 #include <IMap.h>
 #include <List.h>
@@ -332,12 +337,18 @@
 #include <flixel/FlxState.h>
 #include <flixel/group/FlxGroup.h>
 #include <flixel/group/FlxTypedGroup.h>
-#include <flixel/FlxBasic.h>
-#include <flixel/interfaces/IFlxDestroyable.h>
 #include <EReg.h>
 #include <DefaultAssetLibrary.h>
 #include <openfl/_legacy/AssetLibrary.h>
 #include <Date.h>
+#include <Bullet.h>
+#include <flixel/FlxSprite.h>
+#include <flixel/FlxObject.h>
+#include <flixel/util/FlxRect.h>
+#include <flixel/util/FlxPool_flixel_util_FlxRect.h>
+#include <flixel/interfaces/IFlxPooled.h>
+#include <flixel/FlxBasic.h>
+#include <flixel/interfaces/IFlxDestroyable.h>
 #include <DocumentClass.h>
 #include <Main.h>
 #include <openfl/_legacy/display/Sprite.h>
@@ -509,6 +520,13 @@ hx::RegisterResources( hx::GetResources() );
 ::haxe::zip::Uncompress_obj::__register();
 ::haxe::zip::FlushMode_obj::__register();
 ::haxe::zip::Compress_obj::__register();
+::haxe::xml::Parser_obj::__register();
+::haxe::xml::Fast_obj::__register();
+::haxe::xml::_Fast::NodeListAccess_obj::__register();
+::haxe::xml::_Fast::HasNodeAccess_obj::__register();
+::haxe::xml::_Fast::HasAttribAccess_obj::__register();
+::haxe::xml::_Fast::AttribAccess_obj::__register();
+::haxe::xml::_Fast::NodeAccess_obj::__register();
 ::haxe::io::Path_obj::__register();
 ::haxe::io::Error_obj::__register();
 ::haxe::io::Eof_obj::__register();
@@ -640,15 +658,12 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::animation::FlxAnimationController_obj::__register();
 ::flixel::animation::FlxAnimation_obj::__register();
 ::flixel::animation::FlxBaseAnimation_obj::__register();
+::flixel::addons::editors::ogmo::FlxOgmoLoader_obj::__register();
 ::flixel::FlxSubState_obj::__register();
-::flixel::FlxSprite_obj::__register();
 ::flixel::_FlxSprite::GraphicDefault_obj::__register();
 ::openfl::_legacy::display::BitmapData_obj::__register();
-::flixel::FlxObject_obj::__register();
 ::flixel::FlxGame_obj::__register();
 ::flixel::FlxG_obj::__register();
-::flixel::util::FlxRect_obj::__register();
-::flixel::util::FlxPool_flixel_util_FlxRect_obj::__register();
 ::flixel::system::frontEnds::WatchFrontEnd_obj::__register();
 ::flixel::system::frontEnds::VCRFrontEnd_obj::__register();
 ::flixel::system::frontEnds::SoundFrontEnd_obj::__register();
@@ -676,7 +691,6 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::system::scaleModes::BaseScaleMode_obj::__register();
 ::flixel::util::FlxPoint_obj::__register();
 ::flixel::util::FlxPool_flixel_util_FlxPoint_obj::__register();
-::flixel::interfaces::IFlxPooled_obj::__register();
 ::flixel::system::FlxVersion_obj::__register();
 ::flixel::FlxCamera_obj::__register();
 ::cpp::vm::Thread_obj::__register();
@@ -689,6 +703,8 @@ hx::RegisterResources( hx::GetResources() );
 ::StringTools_obj::__register();
 ::StringBuf_obj::__register();
 ::Reflect_obj::__register();
+::Player_obj::__register();
+::PlayState_obj::__register();
 ::MenuState_obj::__register();
 ::IMap_obj::__register();
 ::List_obj::__register();
@@ -697,12 +713,18 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::FlxState_obj::__register();
 ::flixel::group::FlxGroup_obj::__register();
 ::flixel::group::FlxTypedGroup_obj::__register();
-::flixel::FlxBasic_obj::__register();
-::flixel::interfaces::IFlxDestroyable_obj::__register();
 ::EReg_obj::__register();
 ::DefaultAssetLibrary_obj::__register();
 ::openfl::_legacy::AssetLibrary_obj::__register();
 ::Date_obj::__register();
+::Bullet_obj::__register();
+::flixel::FlxSprite_obj::__register();
+::flixel::FlxObject_obj::__register();
+::flixel::util::FlxRect_obj::__register();
+::flixel::util::FlxPool_flixel_util_FlxRect_obj::__register();
+::flixel::interfaces::IFlxPooled_obj::__register();
+::flixel::FlxBasic_obj::__register();
+::flixel::interfaces::IFlxDestroyable_obj::__register();
 ::DocumentClass_obj::__register();
 ::Main_obj::__register();
 ::openfl::_legacy::display::Sprite_obj::__register();
@@ -752,11 +774,17 @@ hx::RegisterResources( hx::GetResources() );
 ::openfl::_legacy::display::Sprite_obj::__boot();
 ::Main_obj::__boot();
 ::DocumentClass_obj::__boot();
+::flixel::interfaces::IFlxDestroyable_obj::__boot();
+::flixel::FlxBasic_obj::__boot();
+::flixel::interfaces::IFlxPooled_obj::__boot();
+::flixel::util::FlxPool_flixel_util_FlxRect_obj::__boot();
+::flixel::util::FlxRect_obj::__boot();
+::flixel::FlxObject_obj::__boot();
+::flixel::FlxSprite_obj::__boot();
+::Bullet_obj::__boot();
 ::Date_obj::__boot();
 ::openfl::_legacy::AssetLibrary_obj::__boot();
 ::DefaultAssetLibrary_obj::__boot();
-::flixel::interfaces::IFlxDestroyable_obj::__boot();
-::flixel::FlxBasic_obj::__boot();
 ::flixel::group::FlxTypedGroup_obj::__boot();
 ::flixel::group::FlxGroup_obj::__boot();
 ::flixel::FlxState_obj::__boot();
@@ -765,6 +793,8 @@ hx::RegisterResources( hx::GetResources() );
 ::List_obj::__boot();
 ::IMap_obj::__boot();
 ::MenuState_obj::__boot();
+::PlayState_obj::__boot();
+::Player_obj::__boot();
 ::Reflect_obj::__boot();
 ::StringBuf_obj::__boot();
 ::StringTools_obj::__boot();
@@ -773,7 +803,6 @@ hx::RegisterResources( hx::GetResources() );
 ::XmlType_obj::__boot();
 ::flixel::FlxCamera_obj::__boot();
 ::flixel::system::FlxVersion_obj::__boot();
-::flixel::interfaces::IFlxPooled_obj::__boot();
 ::flixel::util::FlxPool_flixel_util_FlxPoint_obj::__boot();
 ::flixel::util::FlxPoint_obj::__boot();
 ::flixel::system::scaleModes::BaseScaleMode_obj::__boot();
@@ -800,15 +829,12 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::system::frontEnds::SoundFrontEnd_obj::__boot();
 ::flixel::system::frontEnds::VCRFrontEnd_obj::__boot();
 ::flixel::system::frontEnds::WatchFrontEnd_obj::__boot();
-::flixel::util::FlxPool_flixel_util_FlxRect_obj::__boot();
-::flixel::util::FlxRect_obj::__boot();
 ::flixel::FlxG_obj::__boot();
 ::flixel::FlxGame_obj::__boot();
-::flixel::FlxObject_obj::__boot();
 ::openfl::_legacy::display::BitmapData_obj::__boot();
 ::flixel::_FlxSprite::GraphicDefault_obj::__boot();
-::flixel::FlxSprite_obj::__boot();
 ::flixel::FlxSubState_obj::__boot();
+::flixel::addons::editors::ogmo::FlxOgmoLoader_obj::__boot();
 ::flixel::animation::FlxBaseAnimation_obj::__boot();
 ::flixel::animation::FlxAnimation_obj::__boot();
 ::flixel::animation::FlxAnimationController_obj::__boot();
@@ -940,6 +966,13 @@ hx::RegisterResources( hx::GetResources() );
 ::haxe::io::Eof_obj::__boot();
 ::haxe::io::Error_obj::__boot();
 ::haxe::io::Path_obj::__boot();
+::haxe::xml::_Fast::NodeAccess_obj::__boot();
+::haxe::xml::_Fast::AttribAccess_obj::__boot();
+::haxe::xml::_Fast::HasAttribAccess_obj::__boot();
+::haxe::xml::_Fast::HasNodeAccess_obj::__boot();
+::haxe::xml::_Fast::NodeListAccess_obj::__boot();
+::haxe::xml::Fast_obj::__boot();
+::haxe::xml::Parser_obj::__boot();
 ::haxe::zip::Compress_obj::__boot();
 ::haxe::zip::FlushMode_obj::__boot();
 ::haxe::zip::Uncompress_obj::__boot();

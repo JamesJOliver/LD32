@@ -209,11 +209,13 @@ HX_DEFINE_DYNAMIC_FUNC0(MovieClip_obj,get_totalFrames,return )
 
 MovieClip_obj::MovieClip_obj()
 {
+	HX_INIT_IMPLEMENT_DYNAMIC;
 }
 
 void MovieClip_obj::__Mark(HX_MARK_PARAMS)
 {
 	HX_MARK_BEGIN_CLASS(MovieClip);
+	HX_MARK_DYNAMIC;
 	HX_MARK_MEMBER_NAME(currentFrame,"currentFrame");
 	HX_MARK_MEMBER_NAME(currentFrameLabel,"currentFrameLabel");
 	HX_MARK_MEMBER_NAME(currentLabel,"currentLabel");
@@ -232,6 +234,7 @@ void MovieClip_obj::__Mark(HX_MARK_PARAMS)
 
 void MovieClip_obj::__Visit(HX_VISIT_PARAMS)
 {
+	HX_VISIT_DYNAMIC;
 	HX_VISIT_MEMBER_NAME(currentFrame,"currentFrame");
 	HX_VISIT_MEMBER_NAME(currentFrameLabel,"currentFrameLabel");
 	HX_VISIT_MEMBER_NAME(currentLabel,"currentLabel");
@@ -299,6 +302,7 @@ Dynamic MovieClip_obj::__Field(const ::String &inName,bool inCallProp)
 	case 21:
 		if (HX_FIELD_EQ(inName,"get_currentFrameLabel") ) { return get_currentFrameLabel_dyn(); }
 	}
+	HX_CHECK_DYNAMIC_GET_FIELD(inName);
 	return super::__Field(inName,inCallProp);
 }
 
@@ -333,7 +337,9 @@ Dynamic MovieClip_obj::__SetField(const ::String &inName,const Dynamic &inValue,
 	case 19:
 		if (HX_FIELD_EQ(inName,"__currentFrameLabel") ) { __currentFrameLabel=inValue.Cast< ::String >(); return inValue; }
 	}
-	return super::__SetField(inName,inValue,inCallProp);
+	try { return super::__SetField(inName,inValue,inCallProp); }
+	catch(Dynamic e) { HX_DYNAMIC_SET_FIELD(inName,inValue); }
+	return inValue;
 }
 
 void MovieClip_obj::__GetFields(Array< ::String> &outFields)
@@ -350,6 +356,7 @@ void MovieClip_obj::__GetFields(Array< ::String> &outFields)
 	outFields->push(HX_CSTRING("__currentLabel"));
 	outFields->push(HX_CSTRING("__currentLabels"));
 	outFields->push(HX_CSTRING("__totalFrames"));
+	HX_APPEND_DYNAMIC_FIELDS(outFields);
 	super::__GetFields(outFields);
 };
 

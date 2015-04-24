@@ -36,6 +36,7 @@ class HXCPP_CLASS_ATTRIBUTES  MovieClip_obj : public ::openfl::_legacy::display:
 		//~MovieClip_obj();
 
 		HX_DO_RTTI;
+		HX_DECLARE_IMPLEMENT_DYNAMIC;
 		static void __boot();
 		static void __register();
 		void __Mark(HX_MARK_PARAMS);

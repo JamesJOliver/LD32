@@ -51,10 +51,32 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		path.set ("assets/data/data-goes-here.txt", "assets/data/data-goes-here.txt");
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
+		path.set ("assets/data/tilemap", "assets/data/tilemap");
+		type.set ("assets/data/tilemap", AssetType.BINARY);
 		path.set ("assets/images/images-go-here.txt", "assets/images/images-go-here.txt");
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
+		path.set ("assets/images/tiles.png", "assets/images/tiles.png");
+		type.set ("assets/images/tiles.png", AssetType.IMAGE);
+		path.set ("assets/images/tiles.pyxel", "assets/images/tiles.pyxel");
+		type.set ("assets/images/tiles.pyxel", AssetType.BINARY);
+		path.set ("assets/images/tilesMKI.pyxel", "assets/images/tilesMKI.pyxel");
+		type.set ("assets/images/tilesMKI.pyxel", AssetType.BINARY);
+		path.set ("assets/images/titleBackgroud.png", "assets/images/titleBackgroud.png");
+		type.set ("assets/images/titleBackgroud.png", AssetType.IMAGE);
+		path.set ("assets/images/titleBackgroud.pyxel", "assets/images/titleBackgroud.pyxel");
+		type.set ("assets/images/titleBackgroud.pyxel", AssetType.BINARY);
+		path.set ("assets/levels/LD32.oep", "assets/levels/LD32.oep");
+		type.set ("assets/levels/LD32.oep", AssetType.TEXT);
+		path.set ("assets/levels/level01.oel", "assets/levels/level01.oel");
+		type.set ("assets/levels/level01.oel", AssetType.TEXT);
+		path.set ("assets/levels/level1.oel", "assets/levels/level1.oel");
+		type.set ("assets/levels/level1.oel", AssetType.TEXT);
+		path.set ("assets/music/level.ceol", "assets/music/level.ceol");
+		type.set ("assets/music/level.ceol", AssetType.TEXT);
 		path.set ("assets/music/music-goes-here.txt", "assets/music/music-goes-here.txt");
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
+		path.set ("assets/music/somelevel.ceol", "assets/music/somelevel.ceol");
+		type.set ("assets/music/somelevel.ceol", AssetType.TEXT);
 		path.set ("assets/sounds/sounds-go-here.txt", "assets/sounds/sounds-go-here.txt");
 		type.set ("assets/sounds/sounds-go-here.txt", AssetType.TEXT);
 		path.set ("assets/sounds/beep.ogg", "assets/sounds/beep.ogg");
@@ -69,10 +91,43 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/data/data-goes-here.txt";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
+		id = "assets/data/tilemap";
+		path.set (id, id);
+		type.set (id, AssetType.BINARY);
 		id = "assets/images/images-go-here.txt";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
+		id = "assets/images/tiles.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/tiles.pyxel";
+		path.set (id, id);
+		type.set (id, AssetType.BINARY);
+		id = "assets/images/tilesMKI.pyxel";
+		path.set (id, id);
+		type.set (id, AssetType.BINARY);
+		id = "assets/images/titleBackgroud.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/titleBackgroud.pyxel";
+		path.set (id, id);
+		type.set (id, AssetType.BINARY);
+		id = "assets/levels/LD32.oep";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
+		id = "assets/levels/level01.oel";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
+		id = "assets/levels/level1.oel";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
+		id = "assets/music/level.ceol";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
 		id = "assets/music/music-goes-here.txt";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
+		id = "assets/music/somelevel.ceol";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
 		id = "assets/sounds/sounds-go-here.txt";
@@ -97,9 +152,31 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -731,7 +808,29 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 #elseif html5
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -813,10 +912,32 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		path.set ("assets/data/data-goes-here.txt", "assets/data/data-goes-here.txt");
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
+		path.set ("assets/data/tilemap", "assets/data/tilemap");
+		type.set ("assets/data/tilemap", AssetType.BINARY);
 		path.set ("assets/images/images-go-here.txt", "assets/images/images-go-here.txt");
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
+		path.set ("assets/images/tiles.png", "assets/images/tiles.png");
+		type.set ("assets/images/tiles.png", AssetType.IMAGE);
+		path.set ("assets/images/tiles.pyxel", "assets/images/tiles.pyxel");
+		type.set ("assets/images/tiles.pyxel", AssetType.BINARY);
+		path.set ("assets/images/tilesMKI.pyxel", "assets/images/tilesMKI.pyxel");
+		type.set ("assets/images/tilesMKI.pyxel", AssetType.BINARY);
+		path.set ("assets/images/titleBackgroud.png", "assets/images/titleBackgroud.png");
+		type.set ("assets/images/titleBackgroud.png", AssetType.IMAGE);
+		path.set ("assets/images/titleBackgroud.pyxel", "assets/images/titleBackgroud.pyxel");
+		type.set ("assets/images/titleBackgroud.pyxel", AssetType.BINARY);
+		path.set ("assets/levels/LD32.oep", "assets/levels/LD32.oep");
+		type.set ("assets/levels/LD32.oep", AssetType.TEXT);
+		path.set ("assets/levels/level01.oel", "assets/levels/level01.oel");
+		type.set ("assets/levels/level01.oel", AssetType.TEXT);
+		path.set ("assets/levels/level1.oel", "assets/levels/level1.oel");
+		type.set ("assets/levels/level1.oel", AssetType.TEXT);
+		path.set ("assets/music/level.ceol", "assets/music/level.ceol");
+		type.set ("assets/music/level.ceol", AssetType.TEXT);
 		path.set ("assets/music/music-goes-here.txt", "assets/music/music-goes-here.txt");
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
+		path.set ("assets/music/somelevel.ceol", "assets/music/somelevel.ceol");
+		type.set ("assets/music/somelevel.ceol", AssetType.TEXT);
 		path.set ("assets/sounds/sounds-go-here.txt", "assets/sounds/sounds-go-here.txt");
 		type.set ("assets/sounds/sounds-go-here.txt", AssetType.TEXT);
 		path.set ("assets/sounds/beep.ogg", "assets/sounds/beep.ogg");
@@ -831,10 +952,43 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/data/data-goes-here.txt";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
+		id = "assets/data/tilemap";
+		path.set (id, id);
+		type.set (id, AssetType.BINARY);
 		id = "assets/images/images-go-here.txt";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
+		id = "assets/images/tiles.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/tiles.pyxel";
+		path.set (id, id);
+		type.set (id, AssetType.BINARY);
+		id = "assets/images/tilesMKI.pyxel";
+		path.set (id, id);
+		type.set (id, AssetType.BINARY);
+		id = "assets/images/titleBackgroud.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/titleBackgroud.pyxel";
+		path.set (id, id);
+		type.set (id, AssetType.BINARY);
+		id = "assets/levels/LD32.oep";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
+		id = "assets/levels/level01.oel";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
+		id = "assets/levels/level1.oel";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
+		id = "assets/music/level.ceol";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
 		id = "assets/music/music-goes-here.txt";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
+		id = "assets/music/somelevel.ceol";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
 		id = "assets/sounds/sounds-go-here.txt";
@@ -866,11 +1020,33 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		#end
 		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1486,7 +1662,29 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 #elseif html5
+
+
+
+
+
+
+
+
+
+
+
 
 
 

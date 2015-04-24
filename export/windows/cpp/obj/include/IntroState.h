@@ -15,6 +15,8 @@ HX_DECLARE_CLASS2(flixel,group,FlxGroup)
 HX_DECLARE_CLASS2(flixel,group,FlxTypedGroup)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,text,FlxText)
+HX_DECLARE_CLASS2(flixel,ui,FlxButton)
+HX_DECLARE_CLASS2(flixel,ui,FlxTypedButton)
 
 
 class HXCPP_CLASS_ATTRIBUTES  IntroState_obj : public ::flixel::FlxState_obj{
@@ -40,11 +42,15 @@ class HXCPP_CLASS_ATTRIBUTES  IntroState_obj : public ::flixel::FlxState_obj{
 		::String __ToString() const { return HX_CSTRING("IntroState"); }
 
 		::flixel::text::FlxText _introText;
+		::flixel::ui::FlxButton _playButton;
 		virtual Void create( );
 
 		virtual Void update( );
 
 		virtual Void destroy( );
+
+		virtual Void playGame( );
+		Dynamic playGame_dyn();
 
 };
 
