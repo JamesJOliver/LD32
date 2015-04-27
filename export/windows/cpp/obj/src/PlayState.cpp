@@ -83,19 +83,19 @@ Void PlayState_obj::create( ){
 		HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",38,0xb30d7781)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(39)
-		::flixel::addons::editors::ogmo::FlxOgmoLoader _g = ::flixel::addons::editors::ogmo::FlxOgmoLoader_obj::__new(HX_CSTRING("assets/levels/level01.oel"));		HX_STACK_VAR(_g,"_g");
+		::flixel::addons::editors::ogmo::FlxOgmoLoader _g = ::flixel::addons::editors::ogmo::FlxOgmoLoader_obj::__new(HX_CSTRING("assets/levels/level02.oel"));		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(39)
 		this->_map = _g;
 		HX_STACK_LINE(40)
-		::flixel::tile::FlxTilemap _g1 = this->_map->loadTilemap(HX_CSTRING("assets/images/tiles.png"),(int)32,(int)32,HX_CSTRING("platform"));		HX_STACK_VAR(_g1,"_g1");
+		::flixel::tile::FlxTilemap _g1 = this->_map->loadTilemap(HX_CSTRING("assets/images/tilesMKI.png"),(int)32,(int)32,HX_CSTRING("platform"));		HX_STACK_VAR(_g1,"_g1");
 		HX_STACK_LINE(40)
 		this->_mapPlat = _g1;
 		HX_STACK_LINE(41)
-		::flixel::tile::FlxTilemap _g2 = this->_map->loadTilemap(HX_CSTRING("assets/images/tiles.png"),(int)32,(int)32,HX_CSTRING("floor"));		HX_STACK_VAR(_g2,"_g2");
+		::flixel::tile::FlxTilemap _g2 = this->_map->loadTilemap(HX_CSTRING("assets/images/tilesMKI.png"),(int)32,(int)32,HX_CSTRING("floor"));		HX_STACK_VAR(_g2,"_g2");
 		HX_STACK_LINE(41)
 		this->_mapFloor = _g2;
 		HX_STACK_LINE(42)
-		::flixel::tile::FlxTilemap _g3 = this->_map->loadTilemap(HX_CSTRING("assets/images/tiles.png"),(int)32,(int)32,HX_CSTRING("background"));		HX_STACK_VAR(_g3,"_g3");
+		::flixel::tile::FlxTilemap _g3 = this->_map->loadTilemap(HX_CSTRING("assets/images/tilesMKI.png"),(int)32,(int)32,HX_CSTRING("background"));		HX_STACK_VAR(_g3,"_g3");
 		HX_STACK_LINE(42)
 		this->_mapBack = _g3;
 		HX_STACK_LINE(43)

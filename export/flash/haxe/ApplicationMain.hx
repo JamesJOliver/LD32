@@ -42,6 +42,14 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.BINARY);
 		
 		
+		urls.push ("assets/images/bigButton.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/button.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("assets/images/images-go-here.txt");
 		types.push (lime.Assets.AssetType.TEXT);
 		
@@ -54,7 +62,27 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.BINARY);
 		
 		
+		urls.push ("assets/images/tiles16.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/tiles16.pyxel");
+		types.push (lime.Assets.AssetType.BINARY);
+		
+		
+		urls.push ("assets/images/tilesMKI.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("assets/images/tilesMKI.pyxel");
+		types.push (lime.Assets.AssetType.BINARY);
+		
+		
+		urls.push ("assets/images/tilesTest.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/tilesTest.pyxel");
 		types.push (lime.Assets.AssetType.BINARY);
 		
 		
@@ -71,6 +99,10 @@ class ApplicationMain {
 		
 		
 		urls.push ("assets/levels/level01.oel");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("assets/levels/level02.oel");
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		

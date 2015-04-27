@@ -274,6 +274,13 @@ obj/msvc18-ncxp/6070c039_FlxSwipe.obj
 obj/msvc18-ncxp/a12cfa6b_FlxTypedGroupIterator.obj
 obj/msvc18-ncxp/a12cfa6b_FlxSpriteGroup.obj
 obj/msvc18-ncxp/a12cfa6b_FlxTypedSpriteGroup.obj
+obj/msvc18-ncxp/1d16ab17_Bounds.obj
+obj/msvc18-ncxp/1d16ab17_FlxParticle.obj
+obj/msvc18-ncxp/c6563687_IFlxParticle.obj
+obj/msvc18-ncxp/c6563687_IFlxSprite.obj
+obj/msvc18-ncxp/c6563687_IFlxBasic.obj
+obj/msvc18-ncxp/1d16ab17_FlxEmitter.obj
+obj/msvc18-ncxp/1d16ab17_FlxTypedEmitter.obj
 obj/msvc18-ncxp/4f45cba6_FlxFlicker.obj
 obj/msvc18-ncxp/25768b37_FlxPool_flixel_effects_FlxFlicker.obj
 obj/msvc18-ncxp/c125f970_FlxPrerotatedAnimation.obj

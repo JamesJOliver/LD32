@@ -20,12 +20,18 @@ class AssetData {
 			type.set ("assets/data/data-goes-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/data/tilemap", "assets/data/tilemap");
 			type.set ("assets/data/tilemap", Reflect.field (AssetType, "binary".toUpperCase ()));
+			path.set ("assets/images/bigButton.png", "assets/images/bigButton.png");
+			type.set ("assets/images/bigButton.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/button.png", "assets/images/button.png");
+			type.set ("assets/images/button.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/images-go-here.txt", "assets/images/images-go-here.txt");
 			type.set ("assets/images/images-go-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/images/tiles.png", "assets/images/tiles.png");
 			type.set ("assets/images/tiles.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/tiles.pyxel", "assets/images/tiles.pyxel");
 			type.set ("assets/images/tiles.pyxel", Reflect.field (AssetType, "binary".toUpperCase ()));
+			path.set ("assets/images/tilesMKI.png", "assets/images/tilesMKI.png");
+			type.set ("assets/images/tilesMKI.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/tilesMKI.pyxel", "assets/images/tilesMKI.pyxel");
 			type.set ("assets/images/tilesMKI.pyxel", Reflect.field (AssetType, "binary".toUpperCase ()));
 			path.set ("assets/images/titleBackgroud.png", "assets/images/titleBackgroud.png");
@@ -36,6 +42,8 @@ class AssetData {
 			type.set ("assets/levels/LD32.oep", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/levels/level01.oel", "assets/levels/level01.oel");
 			type.set ("assets/levels/level01.oel", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/levels/level02.oel", "assets/levels/level02.oel");
+			type.set ("assets/levels/level02.oel", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/levels/level1.oel", "assets/levels/level1.oel");
 			type.set ("assets/levels/level1.oel", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/music/level.ceol", "assets/music/level.ceol");
@@ -44,6 +52,10 @@ class AssetData {
 			type.set ("assets/music/music-goes-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/music/somelevel.ceol", "assets/music/somelevel.ceol");
 			type.set ("assets/music/somelevel.ceol", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/sounds/Pickup_Coin.wav", "assets/sounds/Pickup_Coin.wav");
+			type.set ("assets/sounds/Pickup_Coin.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+			path.set ("assets/sounds/Select.wav", "assets/sounds/Select.wav");
+			type.set ("assets/sounds/Select.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
 			path.set ("assets/sounds/sounds-go-here.txt", "assets/sounds/sounds-go-here.txt");
 			type.set ("assets/sounds/sounds-go-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/sounds/beep.ogg", "assets/sounds/beep.ogg");

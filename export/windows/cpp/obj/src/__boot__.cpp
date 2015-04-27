@@ -276,6 +276,13 @@
 #include <flixel/group/FlxTypedGroupIterator.h>
 #include <flixel/group/FlxSpriteGroup.h>
 #include <flixel/group/FlxTypedSpriteGroup.h>
+#include <flixel/effects/particles/Bounds.h>
+#include <flixel/effects/particles/FlxParticle.h>
+#include <flixel/interfaces/IFlxParticle.h>
+#include <flixel/interfaces/IFlxSprite.h>
+#include <flixel/interfaces/IFlxBasic.h>
+#include <flixel/effects/particles/FlxEmitter.h>
+#include <flixel/effects/particles/FlxTypedEmitter.h>
 #include <flixel/effects/FlxFlicker.h>
 #include <flixel/util/FlxPool_flixel_effects_FlxFlicker.h>
 #include <flixel/animation/FlxPrerotatedAnimation.h>
@@ -652,6 +659,13 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::group::FlxTypedGroupIterator_obj::__register();
 ::flixel::group::FlxSpriteGroup_obj::__register();
 ::flixel::group::FlxTypedSpriteGroup_obj::__register();
+::flixel::effects::particles::Bounds_obj::__register();
+::flixel::effects::particles::FlxParticle_obj::__register();
+::flixel::interfaces::IFlxParticle_obj::__register();
+::flixel::interfaces::IFlxSprite_obj::__register();
+::flixel::interfaces::IFlxBasic_obj::__register();
+::flixel::effects::particles::FlxEmitter_obj::__register();
+::flixel::effects::particles::FlxTypedEmitter_obj::__register();
 ::flixel::effects::FlxFlicker_obj::__register();
 ::flixel::util::FlxPool_flixel_effects_FlxFlicker_obj::__register();
 ::flixel::animation::FlxPrerotatedAnimation_obj::__register();
@@ -841,6 +855,13 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::animation::FlxPrerotatedAnimation_obj::__boot();
 ::flixel::util::FlxPool_flixel_effects_FlxFlicker_obj::__boot();
 ::flixel::effects::FlxFlicker_obj::__boot();
+::flixel::effects::particles::FlxTypedEmitter_obj::__boot();
+::flixel::effects::particles::FlxEmitter_obj::__boot();
+::flixel::interfaces::IFlxBasic_obj::__boot();
+::flixel::interfaces::IFlxSprite_obj::__boot();
+::flixel::interfaces::IFlxParticle_obj::__boot();
+::flixel::effects::particles::FlxParticle_obj::__boot();
+::flixel::effects::particles::Bounds_obj::__boot();
 ::flixel::group::FlxTypedSpriteGroup_obj::__boot();
 ::flixel::group::FlxSpriteGroup_obj::__boot();
 ::flixel::group::FlxTypedGroupIterator_obj::__boot();

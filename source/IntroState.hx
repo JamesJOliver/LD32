@@ -29,7 +29,7 @@ class IntroState extends FlxState
 		
 		_playButton = new FlxButton(0, 0, "Begin!", playGame);
 		_playButton.screenCenter();
-		_playButton.onUp.sound = FlxG.sound.load("assets/sounds/Select.wav");
+		_playButton.onDown.sound = FlxG.sound.load("assets/sounds/Select.wav");
 		add(_playButton);
 		
 		super.create();

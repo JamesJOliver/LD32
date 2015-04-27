@@ -18,6 +18,12 @@
 #ifndef INCLUDED_flixel_FlxSprite
 #include <flixel/FlxSprite.h>
 #endif
+#ifndef INCLUDED_flixel_effects_particles_FlxEmitter
+#include <flixel/effects/particles/FlxEmitter.h>
+#endif
+#ifndef INCLUDED_flixel_effects_particles_FlxTypedEmitter
+#include <flixel/effects/particles/FlxTypedEmitter.h>
+#endif
 #ifndef INCLUDED_flixel_group_FlxGroup
 #include <flixel/group/FlxGroup.h>
 #endif
@@ -42,30 +48,30 @@
 
 Void Player_obj::__construct(hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y)
 {
-HX_STACK_FRAME("Player","new",0x8d5554f3,"Player.new","Player.hx",18,0xa27fc9dd)
+HX_STACK_FRAME("Player","new",0x8d5554f3,"Player.new","Player.hx",19,0xa27fc9dd)
 HX_STACK_THIS(this)
 HX_STACK_ARG(__o_X,"X")
 HX_STACK_ARG(__o_Y,"Y")
 Float X = __o_X.Default(0);
 Float Y = __o_Y.Default(0);
 {
-	HX_STACK_LINE(33)
+	HX_STACK_LINE(35)
 	this->_timesJumped = (int)0;
-	HX_STACK_LINE(32)
+	HX_STACK_LINE(34)
 	this->_jumpTime = (int)-1;
-	HX_STACK_LINE(40)
-	super::__construct(X,Y,null());
 	HX_STACK_LINE(42)
-	this->makeGraphic((int)32,(int)32,(int)-65536,null(),null());
-	HX_STACK_LINE(43)
-	this->setSize((int)28,(int)28);
+	super::__construct(X,Y,null());
 	HX_STACK_LINE(44)
-	this->offset->set((int)4,(int)4);
+	this->makeGraphic((int)32,(int)32,(int)-65536,null(),null());
+	HX_STACK_LINE(45)
+	this->setSize((int)28,(int)28);
 	HX_STACK_LINE(46)
-	this->drag->set((int)1200,(int)1200);
-	HX_STACK_LINE(47)
-	this->maxVelocity->set((int)150,(int)250);
+	this->offset->set((int)4,(int)4);
 	HX_STACK_LINE(48)
+	this->drag->set((int)1200,(int)1200);
+	HX_STACK_LINE(49)
+	this->maxVelocity->set((int)150,(int)250);
+	HX_STACK_LINE(50)
 	this->acceleration->set_y((int)620);
 }
 ;
@@ -87,13 +93,15 @@ Dynamic Player_obj::__Create(hx::DynamicArray inArgs)
 
 Void Player_obj::update( ){
 {
-		HX_STACK_FRAME("Player","update",0xf1f8df56,"Player.update","Player.hx",53,0xa27fc9dd)
+		HX_STACK_FRAME("Player","update",0xf1f8df56,"Player.update","Player.hx",58,0xa27fc9dd)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(54)
-		this->jump();
-		HX_STACK_LINE(55)
+		HX_STACK_LINE(59)
 		this->movement();
-		HX_STACK_LINE(56)
+		HX_STACK_LINE(60)
+		this->jump();
+		HX_STACK_LINE(61)
+		this->shoot();
+		HX_STACK_LINE(62)
 		this->super::update();
 	}
 return null();
@@ -102,37 +110,37 @@ return null();
 
 Void Player_obj::jump( ){
 {
-		HX_STACK_FRAME("Player","jump",0x1abc40fb,"Player.jump","Player.hx",60,0xa27fc9dd)
+		HX_STACK_FRAME("Player","jump",0x1abc40fb,"Player.jump","Player.hx",66,0xa27fc9dd)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(61)
+		HX_STACK_LINE(67)
 		bool _jump = false;		HX_STACK_VAR(_jump,"_jump");
-		HX_STACK_LINE(62)
+		HX_STACK_LINE(68)
 		bool _g = ::flixel::FlxG_obj::keys->checkKeyStatus(Array_obj< ::String >::__new().Add(HX_CSTRING("UP")).Add(HX_CSTRING("W")).Add(HX_CSTRING("SPACE")),(int)1);		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(62)
+		HX_STACK_LINE(68)
 		_jump = _g;
-		HX_STACK_LINE(64)
+		HX_STACK_LINE(70)
 		if ((::flixel::FlxG_obj::keys->checkKeyStatus(Array_obj< ::String >::__new().Add(HX_CSTRING("UP")).Add(HX_CSTRING("W")).Add(HX_CSTRING("SPACE")),(int)2))){
-			HX_STACK_LINE(66)
+			HX_STACK_LINE(72)
 			if (((bool((this->velocity->y == (int)0)) || bool((this->_timesJumped < (int)2))))){
-				HX_STACK_LINE(68)
+				HX_STACK_LINE(74)
 				(this->_timesJumped)++;
-				HX_STACK_LINE(69)
+				HX_STACK_LINE(75)
 				this->_jumpTime = (int)0;
 			}
 		}
-		HX_STACK_LINE(74)
+		HX_STACK_LINE(79)
 		if (((  ((::flixel::FlxG_obj::keys->checkKeyStatus(Array_obj< ::String >::__new().Add(HX_CSTRING("UP")).Add(HX_CSTRING("W")).Add(HX_CSTRING("SPACE")),(int)1))) ? bool((this->_jumpTime >= (int)0)) : bool(false) ))){
-			HX_STACK_LINE(76)
+			HX_STACK_LINE(81)
 			hx::AddEq(this->_jumpTime,::flixel::FlxG_obj::elapsed);
-			HX_STACK_LINE(79)
+			HX_STACK_LINE(83)
 			if (((this->_jumpTime > 0.25))){
-				HX_STACK_LINE(81)
+				HX_STACK_LINE(85)
 				this->_jumpTime = (int)-1;
 			}
 			else{
-				HX_STACK_LINE(83)
+				HX_STACK_LINE(87)
 				if (((this->_jumpTime > (int)0))){
-					HX_STACK_LINE(85)
+					HX_STACK_LINE(89)
 					this->velocity->set_y((-0.73 * this->maxVelocity->y));
 				}
 			}
@@ -146,23 +154,23 @@ HX_DEFINE_DYNAMIC_FUNC0(Player_obj,jump,(void))
 
 Void Player_obj::movement( ){
 {
-		HX_STACK_FRAME("Player","movement",0x91ad8bbc,"Player.movement","Player.hx",92,0xa27fc9dd)
+		HX_STACK_FRAME("Player","movement",0x91ad8bbc,"Player.movement","Player.hx",96,0xa27fc9dd)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(93)
+		HX_STACK_LINE(97)
 		this->acceleration->set_x((int)0);
-		HX_STACK_LINE(95)
+		HX_STACK_LINE(99)
 		if ((::flixel::FlxG_obj::keys->checkKeyStatus(Array_obj< ::String >::__new().Add(HX_CSTRING("LEFT")).Add(HX_CSTRING("A")),(int)1))){
-			HX_STACK_LINE(97)
+			HX_STACK_LINE(101)
 			this->set_flipX(true);
-			HX_STACK_LINE(98)
+			HX_STACK_LINE(102)
 			this->acceleration->set_x(-(this->drag->x));
 		}
 		else{
-			HX_STACK_LINE(100)
+			HX_STACK_LINE(104)
 			if ((::flixel::FlxG_obj::keys->checkKeyStatus(Array_obj< ::String >::__new().Add(HX_CSTRING("RIGHT")).Add(HX_CSTRING("D")),(int)1))){
-				HX_STACK_LINE(102)
+				HX_STACK_LINE(106)
 				this->set_flipX(false);
-				HX_STACK_LINE(103)
+				HX_STACK_LINE(107)
 				this->acceleration->set_x(this->drag->x);
 			}
 		}
@@ -175,7 +183,7 @@ HX_DEFINE_DYNAMIC_FUNC0(Player_obj,movement,(void))
 
 Void Player_obj::shoot( ){
 {
-		HX_STACK_FRAME("Player","shoot",0x70019132,"Player.shoot","Player.hx",108,0xa27fc9dd)
+		HX_STACK_FRAME("Player","shoot",0x70019132,"Player.shoot","Player.hx",114,0xa27fc9dd)
 		HX_STACK_THIS(this)
 	}
 return null();
@@ -204,6 +212,7 @@ Player_obj::Player_obj()
 void Player_obj::__Mark(HX_MARK_PARAMS)
 {
 	HX_MARK_BEGIN_CLASS(Player);
+	HX_MARK_MEMBER_NAME(_player,"_player");
 	HX_MARK_MEMBER_NAME(_bullets,"_bullets");
 	HX_MARK_MEMBER_NAME(_bullet,"_bullet");
 	HX_MARK_MEMBER_NAME(_cooldown,"_cooldown");
@@ -218,6 +227,7 @@ void Player_obj::__Mark(HX_MARK_PARAMS)
 
 void Player_obj::__Visit(HX_VISIT_PARAMS)
 {
+	HX_VISIT_MEMBER_NAME(_player,"_player");
 	HX_VISIT_MEMBER_NAME(_bullets,"_bullets");
 	HX_VISIT_MEMBER_NAME(_bullet,"_bullet");
 	HX_VISIT_MEMBER_NAME(_cooldown,"_cooldown");
@@ -242,6 +252,7 @@ Dynamic Player_obj::__Field(const ::String &inName,bool inCallProp)
 		if (HX_FIELD_EQ(inName,"update") ) { return update_dyn(); }
 		break;
 	case 7:
+		if (HX_FIELD_EQ(inName,"_player") ) { return _player; }
 		if (HX_FIELD_EQ(inName,"_bullet") ) { return _bullet; }
 		break;
 	case 8:
@@ -265,6 +276,7 @@ Dynamic Player_obj::__SetField(const ::String &inName,const Dynamic &inValue,boo
 {
 	switch(inName.length) {
 	case 7:
+		if (HX_FIELD_EQ(inName,"_player") ) { _player=inValue.Cast< ::flixel::effects::particles::FlxEmitter >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_bullet") ) { _bullet=inValue.Cast< ::Bullet >(); return inValue; }
 		break;
 	case 8:
@@ -285,6 +297,7 @@ Dynamic Player_obj::__SetField(const ::String &inName,const Dynamic &inValue,boo
 
 void Player_obj::__GetFields(Array< ::String> &outFields)
 {
+	outFields->push(HX_CSTRING("_player"));
 	outFields->push(HX_CSTRING("_bullets"));
 	outFields->push(HX_CSTRING("_bullet"));
 	outFields->push(HX_CSTRING("_cooldown"));
@@ -307,6 +320,7 @@ static ::String sStaticFields[] = {
 
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
+	{hx::fsObject /*::flixel::effects::particles::FlxEmitter*/ ,(int)offsetof(Player_obj,_player),HX_CSTRING("_player")},
 	{hx::fsObject /*::flixel::group::FlxGroup*/ ,(int)offsetof(Player_obj,_bullets),HX_CSTRING("_bullets")},
 	{hx::fsObject /*::Bullet*/ ,(int)offsetof(Player_obj,_bullet),HX_CSTRING("_bullet")},
 	{hx::fsFloat,(int)offsetof(Player_obj,_cooldown),HX_CSTRING("_cooldown")},
@@ -320,6 +334,7 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 #endif
 
 static ::String sMemberFields[] = {
+	HX_CSTRING("_player"),
 	HX_CSTRING("_bullets"),
 	HX_CSTRING("_bullet"),
 	HX_CSTRING("_cooldown"),

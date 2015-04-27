@@ -27,6 +27,18 @@
   <LevelValueDefinitions />
   <LayerDefinitions>
     <LayerDefinition xsi:type="TileLayerDefinition">
+      <Name>background</Name>
+      <Grid>
+        <Width>32</Width>
+        <Height>32</Height>
+      </Grid>
+      <ScrollFactor>
+        <X>1</X>
+        <Y>1</Y>
+      </ScrollFactor>
+      <ExportMode>CSV</ExportMode>
+    </LayerDefinition>
+    <LayerDefinition xsi:type="TileLayerDefinition">
       <Name>floor</Name>
       <Grid>
         <Width>32</Width>
@@ -61,23 +73,11 @@
         <Y>1</Y>
       </ScrollFactor>
     </LayerDefinition>
-    <LayerDefinition xsi:type="TileLayerDefinition">
-      <Name>background</Name>
-      <Grid>
-        <Width>32</Width>
-        <Height>32</Height>
-      </Grid>
-      <ScrollFactor>
-        <X>1</X>
-        <Y>1</Y>
-      </ScrollFactor>
-      <ExportMode>CSV</ExportMode>
-    </LayerDefinition>
   </LayerDefinitions>
   <Tilesets>
     <Tileset>
       <Name>tiles</Name>
-      <FilePath>..\images\tiles.png</FilePath>
+      <FilePath>..\images\tilesMKI.png</FilePath>
       <TileSize>
         <Width>32</Width>
         <Height>32</Height>

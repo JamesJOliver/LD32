@@ -53,12 +53,18 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
 		path.set ("assets/data/tilemap", "assets/data/tilemap");
 		type.set ("assets/data/tilemap", AssetType.BINARY);
+		path.set ("assets/images/bigButton.png", "assets/images/bigButton.png");
+		type.set ("assets/images/bigButton.png", AssetType.IMAGE);
+		path.set ("assets/images/button.png", "assets/images/button.png");
+		type.set ("assets/images/button.png", AssetType.IMAGE);
 		path.set ("assets/images/images-go-here.txt", "assets/images/images-go-here.txt");
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
 		path.set ("assets/images/tiles.png", "assets/images/tiles.png");
 		type.set ("assets/images/tiles.png", AssetType.IMAGE);
 		path.set ("assets/images/tiles.pyxel", "assets/images/tiles.pyxel");
 		type.set ("assets/images/tiles.pyxel", AssetType.BINARY);
+		path.set ("assets/images/tilesMKI.png", "assets/images/tilesMKI.png");
+		type.set ("assets/images/tilesMKI.png", AssetType.IMAGE);
 		path.set ("assets/images/tilesMKI.pyxel", "assets/images/tilesMKI.pyxel");
 		type.set ("assets/images/tilesMKI.pyxel", AssetType.BINARY);
 		path.set ("assets/images/titleBackgroud.png", "assets/images/titleBackgroud.png");
@@ -69,6 +75,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/levels/LD32.oep", AssetType.TEXT);
 		path.set ("assets/levels/level01.oel", "assets/levels/level01.oel");
 		type.set ("assets/levels/level01.oel", AssetType.TEXT);
+		path.set ("assets/levels/level02.oel", "assets/levels/level02.oel");
+		type.set ("assets/levels/level02.oel", AssetType.TEXT);
 		path.set ("assets/levels/level1.oel", "assets/levels/level1.oel");
 		type.set ("assets/levels/level1.oel", AssetType.TEXT);
 		path.set ("assets/music/level.ceol", "assets/music/level.ceol");
@@ -77,6 +85,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
 		path.set ("assets/music/somelevel.ceol", "assets/music/somelevel.ceol");
 		type.set ("assets/music/somelevel.ceol", AssetType.TEXT);
+		path.set ("assets/sounds/Pickup_Coin.wav", "assets/sounds/Pickup_Coin.wav");
+		type.set ("assets/sounds/Pickup_Coin.wav", AssetType.SOUND);
+		path.set ("assets/sounds/Select.wav", "assets/sounds/Select.wav");
+		type.set ("assets/sounds/Select.wav", AssetType.SOUND);
 		path.set ("assets/sounds/sounds-go-here.txt", "assets/sounds/sounds-go-here.txt");
 		type.set ("assets/sounds/sounds-go-here.txt", AssetType.TEXT);
 		path.set ("assets/sounds/beep.ogg", "assets/sounds/beep.ogg");
@@ -94,6 +106,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/data/tilemap";
 		path.set (id, id);
 		type.set (id, AssetType.BINARY);
+		id = "assets/images/bigButton.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/button.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/images-go-here.txt";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
@@ -103,6 +121,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/images/tiles.pyxel";
 		path.set (id, id);
 		type.set (id, AssetType.BINARY);
+		id = "assets/images/tilesMKI.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/tilesMKI.pyxel";
 		path.set (id, id);
 		type.set (id, AssetType.BINARY);
@@ -118,6 +139,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/levels/level01.oel";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
+		id = "assets/levels/level02.oel";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
 		id = "assets/levels/level1.oel";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
@@ -130,6 +154,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/music/somelevel.ceol";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
+		id = "assets/sounds/Pickup_Coin.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/sounds/Select.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
 		id = "assets/sounds/sounds-go-here.txt";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
@@ -163,9 +193,21 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -819,7 +861,19 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
 #elseif html5
+
+
+
+
+
+
 
 
 
@@ -914,12 +968,18 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
 		path.set ("assets/data/tilemap", "assets/data/tilemap");
 		type.set ("assets/data/tilemap", AssetType.BINARY);
+		path.set ("assets/images/bigButton.png", "assets/images/bigButton.png");
+		type.set ("assets/images/bigButton.png", AssetType.IMAGE);
+		path.set ("assets/images/button.png", "assets/images/button.png");
+		type.set ("assets/images/button.png", AssetType.IMAGE);
 		path.set ("assets/images/images-go-here.txt", "assets/images/images-go-here.txt");
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
 		path.set ("assets/images/tiles.png", "assets/images/tiles.png");
 		type.set ("assets/images/tiles.png", AssetType.IMAGE);
 		path.set ("assets/images/tiles.pyxel", "assets/images/tiles.pyxel");
 		type.set ("assets/images/tiles.pyxel", AssetType.BINARY);
+		path.set ("assets/images/tilesMKI.png", "assets/images/tilesMKI.png");
+		type.set ("assets/images/tilesMKI.png", AssetType.IMAGE);
 		path.set ("assets/images/tilesMKI.pyxel", "assets/images/tilesMKI.pyxel");
 		type.set ("assets/images/tilesMKI.pyxel", AssetType.BINARY);
 		path.set ("assets/images/titleBackgroud.png", "assets/images/titleBackgroud.png");
@@ -930,6 +990,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/levels/LD32.oep", AssetType.TEXT);
 		path.set ("assets/levels/level01.oel", "assets/levels/level01.oel");
 		type.set ("assets/levels/level01.oel", AssetType.TEXT);
+		path.set ("assets/levels/level02.oel", "assets/levels/level02.oel");
+		type.set ("assets/levels/level02.oel", AssetType.TEXT);
 		path.set ("assets/levels/level1.oel", "assets/levels/level1.oel");
 		type.set ("assets/levels/level1.oel", AssetType.TEXT);
 		path.set ("assets/music/level.ceol", "assets/music/level.ceol");
@@ -938,6 +1000,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/music/music-goes-here.txt", AssetType.TEXT);
 		path.set ("assets/music/somelevel.ceol", "assets/music/somelevel.ceol");
 		type.set ("assets/music/somelevel.ceol", AssetType.TEXT);
+		path.set ("assets/sounds/Pickup_Coin.wav", "assets/sounds/Pickup_Coin.wav");
+		type.set ("assets/sounds/Pickup_Coin.wav", AssetType.SOUND);
+		path.set ("assets/sounds/Select.wav", "assets/sounds/Select.wav");
+		type.set ("assets/sounds/Select.wav", AssetType.SOUND);
 		path.set ("assets/sounds/sounds-go-here.txt", "assets/sounds/sounds-go-here.txt");
 		type.set ("assets/sounds/sounds-go-here.txt", AssetType.TEXT);
 		path.set ("assets/sounds/beep.ogg", "assets/sounds/beep.ogg");
@@ -955,6 +1021,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/data/tilemap";
 		path.set (id, id);
 		type.set (id, AssetType.BINARY);
+		id = "assets/images/bigButton.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/button.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/images-go-here.txt";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
@@ -964,6 +1036,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/images/tiles.pyxel";
 		path.set (id, id);
 		type.set (id, AssetType.BINARY);
+		id = "assets/images/tilesMKI.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/tilesMKI.pyxel";
 		path.set (id, id);
 		type.set (id, AssetType.BINARY);
@@ -979,6 +1054,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/levels/level01.oel";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
+		id = "assets/levels/level02.oel";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
 		id = "assets/levels/level1.oel";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
@@ -991,6 +1069,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/music/somelevel.ceol";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
+		id = "assets/sounds/Pickup_Coin.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/sounds/Select.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
 		id = "assets/sounds/sounds-go-here.txt";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
@@ -1031,11 +1115,23 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
 		#end
 		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1673,7 +1769,19 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
 #elseif html5
+
+
+
+
+
+
 
 
 

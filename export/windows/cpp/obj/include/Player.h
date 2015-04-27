@@ -11,6 +11,8 @@ HX_DECLARE_CLASS0(Player)
 HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxObject)
 HX_DECLARE_CLASS1(flixel,FlxSprite)
+HX_DECLARE_CLASS3(flixel,effects,particles,FlxEmitter)
+HX_DECLARE_CLASS3(flixel,effects,particles,FlxTypedEmitter)
 HX_DECLARE_CLASS2(flixel,group,FlxGroup)
 HX_DECLARE_CLASS2(flixel,group,FlxTypedGroup)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
@@ -40,6 +42,7 @@ class HXCPP_CLASS_ATTRIBUTES  Player_obj : public ::flixel::FlxSprite_obj{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("Player"); }
 
+		::flixel::effects::particles::FlxEmitter _player;
 		::flixel::group::FlxGroup _bullets;
 		::Bullet _bullet;
 		Float _cooldown;

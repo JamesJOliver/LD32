@@ -1,5 +1,6 @@
 package ;
 
+import flixel.effects.particles.FlxEmitter;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
@@ -25,6 +26,7 @@ class Player extends FlxSprite
 	public static inline var BULLET_SPEED:Int = 200;
 	public static inline var SHOOT_DELAY:Float = 0.4;
 	
+	private var _player:FlxEmitter;
 	private var _bullets:FlxGroup;
 	private var _bullet:Bullet;
 	private var _cooldown:Float;
@@ -39,20 +41,24 @@ class Player extends FlxSprite
 	{
 		super(X, Y);
 		
-		makeGraphic(32, 32, FlxColor.RED);
-		setSize(28, 28);
-		offset.set(4, 4);
+		makeGraphic(16, 16, FlxColor.RED);
+		//setSize(12, 16);
+		//offset.set(3, 4);
 		
 		drag.set(RUN_SPEED * 8, RUN_SPEED * 8);
 		maxVelocity.set(RUN_SPEED, JUMP_SPEED);
 		acceleration.y = GRAVITY;
 		
+		
+		
+		
 	}
 	
 	override public function update():Void
 	{
+		movement();		
 		jump();
-		movement();
+		shoot();
 		super.update();
 	}
 	
@@ -63,26 +69,24 @@ class Player extends FlxSprite
 		
 		if (FlxG.keys.anyJustPressed(["UP", "W", "SPACE"]))
 		{
-			if ((velocity.y == 0) || (_timesJumped < JUMPS_ALLOWED)) // Only allow two jumps
+			if ((velocity.y == 0) || (_timesJumped < JUMPS_ALLOWED))
 			{
 				_timesJumped++;
 				_jumpTime = 0;
 			}
 		}
 		
-		// You can also use space or any other key you want
 		if ((FlxG.keys.anyPressed(["UP", "W", "SPACE"])) && (_jumpTime >= 0)) 
 		{
 			_jumpTime += FlxG.elapsed;
 			
-			// You can't jump for more than 0.25 seconds
 			if (_jumpTime > 0.25)
 			{
 				_jumpTime = -1;
 			}
 			else if (_jumpTime > 0)
 			{
-				velocity.y = - 0.73 * maxVelocity.y;
+				velocity.y = - 0.5 * maxVelocity.y;
 			}
 		}
 		
@@ -106,7 +110,10 @@ class Player extends FlxSprite
 	
 	public function shoot():Void
 	{
-		
+	//if (FlxG.keys.anyPressed(["X", "J"]) 
+		{
+			
+		}
 	}
 	
 

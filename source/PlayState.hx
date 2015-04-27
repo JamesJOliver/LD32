@@ -37,12 +37,12 @@ class PlayState extends FlxState
 	override public function create():Void
 	{
 		_map = new FlxOgmoLoader("assets/levels/level01.oel");
-		_mapPlat = _map.loadTilemap("assets/images/tiles.png", 32, 32, "platform");
-		_mapFloor = _map.loadTilemap("assets/images/tiles.png", 32, 32, "floor");
-		_mapBack = _map.loadTilemap("assets/images/tiles.png", 32, 32, "background");
-		_mapPlat.setTileProperties(1, FlxObject.CEILING);
-		_mapFloor.setTileProperties(2, FlxObject.ANY);
-		_mapBack.setTileProperties(3, FlxObject.NONE);
+		_mapPlat = _map.loadTilemap("assets/images/tiles16.png", 16, 16, "platform");
+		_mapFloor = _map.loadTilemap("assets/images/tiles16.png", 16, 16, "floor");
+		_mapBack = _map.loadTilemap("assets/images/tiles16.png", 16, 16, "background");
+		_mapPlat.setTileProperties(2, FlxObject.CEILING);
+		_mapFloor.setTileProperties(3, FlxObject.ANY);
+		_mapBack.setTileProperties(4, FlxObject.NONE);
 		
 		add(_mapPlat);
 		add(_mapFloor);

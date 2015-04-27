@@ -33,6 +33,12 @@
 #ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
 #include <flixel/interfaces/IFlxDestroyable.h>
 #endif
+#ifndef INCLUDED_flixel_system_FlxSound
+#include <flixel/system/FlxSound.h>
+#endif
+#ifndef INCLUDED_flixel_system_frontEnds_SoundFrontEnd
+#include <flixel/system/frontEnds/SoundFrontEnd.h>
+#endif
 #ifndef INCLUDED_flixel_text_FlxText
 #include <flixel/text/FlxText.h>
 #endif
@@ -41,6 +47,9 @@
 #endif
 #ifndef INCLUDED_flixel_ui_FlxTypedButton
 #include <flixel/ui/FlxTypedButton.h>
+#endif
+#ifndef INCLUDED_flixel_ui__FlxTypedButton_FlxButtonEvent
+#include <flixel/ui/_FlxTypedButton/FlxButtonEvent.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxDestroyUtil
 #include <flixel/util/FlxDestroyUtil.h>
@@ -117,8 +126,12 @@ Void IntroState_obj::create( ){
 		HX_STACK_LINE(31)
 		::flixel::util::FlxSpriteUtil_obj::screenCenter(this->_playButton,null(),null());
 		HX_STACK_LINE(32)
+		::flixel::system::FlxSound _g2 = ::flixel::FlxG_obj::sound->load(HX_CSTRING("assets/sounds/Select.wav"),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g2,"_g2");
+		HX_STACK_LINE(32)
+		this->_playButton->onUp->sound = _g2;
+		HX_STACK_LINE(33)
 		this->add(this->_playButton);
-		HX_STACK_LINE(34)
+		HX_STACK_LINE(35)
 		this->super::create();
 	}
 return null();
@@ -127,9 +140,9 @@ return null();
 
 Void IntroState_obj::update( ){
 {
-		HX_STACK_FRAME("IntroState","update",0x181e8332,"IntroState.update","IntroState.hx",42,0xd9d74fb9)
+		HX_STACK_FRAME("IntroState","update",0x181e8332,"IntroState.update","IntroState.hx",43,0xd9d74fb9)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(42)
+		HX_STACK_LINE(43)
 		this->super::update();
 	}
 return null();
@@ -138,17 +151,17 @@ return null();
 
 Void IntroState_obj::destroy( ){
 {
-		HX_STACK_FRAME("IntroState","destroy",0x894ab3b1,"IntroState.destroy","IntroState.hx",50,0xd9d74fb9)
+		HX_STACK_FRAME("IntroState","destroy",0x894ab3b1,"IntroState.destroy","IntroState.hx",51,0xd9d74fb9)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(51)
+		HX_STACK_LINE(52)
 		this->super::destroy();
-		HX_STACK_LINE(52)
+		HX_STACK_LINE(54)
 		::flixel::text::FlxText _g = ::flixel::util::FlxDestroyUtil_obj::destroy(this->_introText);		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(52)
+		HX_STACK_LINE(54)
 		this->_introText = _g;
-		HX_STACK_LINE(53)
+		HX_STACK_LINE(55)
 		::flixel::ui::FlxButton _g1 = ::flixel::util::FlxDestroyUtil_obj::destroy(this->_playButton);		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(53)
+		HX_STACK_LINE(55)
 		this->_playButton = _g1;
 	}
 return null();
@@ -157,11 +170,11 @@ return null();
 
 Void IntroState_obj::playGame( ){
 {
-		HX_STACK_FRAME("IntroState","playGame",0xfba3b16f,"IntroState.playGame","IntroState.hx",58,0xd9d74fb9)
+		HX_STACK_FRAME("IntroState","playGame",0xfba3b16f,"IntroState.playGame","IntroState.hx",60,0xd9d74fb9)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(58)
+		HX_STACK_LINE(60)
 		::flixel::FlxState State = ::PlayState_obj::__new(null());		HX_STACK_VAR(State,"State");
-		HX_STACK_LINE(58)
+		HX_STACK_LINE(60)
 		::flixel::FlxG_obj::game->_requestedState = State;
 	}
 return null();

@@ -69,11 +69,11 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(19)
 	this->startFullscreen = false;
 	HX_STACK_LINE(18)
-	this->skipSplash = false;
+	this->skipSplash = true;
 	HX_STACK_LINE(17)
 	this->framerate = (int)60;
 	HX_STACK_LINE(16)
-	this->zoom = (int)1;
+	this->zoom = (int)5;
 	HX_STACK_LINE(15)
 	this->initialState = hx::ClassOf< ::MenuState >();
 	HX_STACK_LINE(14)
